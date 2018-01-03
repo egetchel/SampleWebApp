@@ -37,7 +37,22 @@ Import the Project
 * Enter the repository URL to import and hit Next
 ![import](/images/import-git-repo-location.png)
 * Make sure the SampleWebApp is selected and hit Finish
-![import](/images/import-git-specify-resources.png)
+![import](/images/import-specify-resources.png)
+
+Install and Register Tomcat Server with JBoss Developer Studio
+-------------------------
+* Install JBoss Web Server 3 or Apache Tomcat.
+* Create a new Server instance.  In the Servers tab towards the bottom of the screen, click the link to create a new server. If one already exists, right-click and select "New" -> "Server"
+![create](/images/create-new-server.png)
+* In the Apache section, select Tomcat v7.0 Server and select "Next"
+![create](/images/create-tomcat-instance.png)
+* If an existing Tomcat runtime environment is not available, JBDS will ask for the installation location.  Select "Browse" and navigate to the root install folder and select "Next"
+![create](/images/create-tomcat-install-directory.png) 
+* In the Add and Remove window, add the SampleWebApp to the Tomcat server and select "Finish"
+![create](/images/create-add-web-app.png)
+
+The server should now show in the Servers tab at the bottom of the screen.
+
 
 Start the JBoss EAP Server
 -------------------------
