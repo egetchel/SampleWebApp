@@ -21,10 +21,15 @@ The application this project produces is designed to be run with JBoss Developer
 You will need Java 8.0 (Java SDK 1.8) or later and Maven 3.1.1 or later, JBoss Developer Studio 10 and Tomcat 7.
 
 
-Use of EAP7_HOME
+Install JBoss Developer Studio
 ---------------
 
 In the following instructions, replace `EAP7_HOME` with the actual path to your JBoss EAP installation. The installation path is described in detail here: [Use of EAP7_HOME and JBOSS_HOME Variables](https://github.com/jboss-developer/jboss-developer-shared-resources/blob/master/guides/USE_OF_EAP7_HOME.md#use-of-eap_home-and-jboss_home-variables).
+
+Import the Project
+-------------------------
+![import](/images/import-git.png)
+
 
 
 Start the JBoss EAP Server
