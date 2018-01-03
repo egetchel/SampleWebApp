@@ -28,9 +28,16 @@ In the following instructions, replace `EAP7_HOME` with the actual path to your 
 
 Import the Project
 -------------------------
+
+* From the Project Explorer menu, right-click and select "Import"
+* Select "Project from Git (with smart import)" and hit Next
+
 ![import](/images/import-git.png)
-
-
+* Select "Clone URI" and hit Next
+* Enter the repository URL to import and hit Next
+![import](/images/import-git-repo-location.png)
+* Make sure the SampleWebApp is selected and hit Finish
+![import](/images/import-git-specify-resources.png)
 
 Start the JBoss EAP Server
 -------------------------
