@@ -55,12 +55,24 @@ Next, we will install Tomcat and configure JBoss Developer Studio to be able to 
 
 The server should now show in the Servers tab at the bottom of the screen.
 
+Update the Document Root
+-------------------------
+Note: This step is a workaround. The pom.xml is configured to create a web application as ROOT.WAR, which normally instructs Tomcat to deploy the application without a context root. In this case, Eclipse is generating an application with a context root of 'ROOT'.  This one-time step will eliminate this incorrect context root.
+* Open the Server configuration by double-clicking on the Tomcat server in the Servers tab.
+* On the bottom of the Tomcat configuration screen are two tabs labeled 'Overview' and 'Modules'. Select the Modules tab.
+* You will see the SampleWebApp application. Click the 'Edit' button
+![modify](/images/tomcat-modify-context-root.png)
+* Remove the value '/ROOT' from the Path attribute
+![remove](/images/tomcat-remove-context-root.png)
+* Click OK
+* Save the configuration changes (File -> Save or hit the disk icon).
 
 Start the Tomcat Server
 -------------------------
 
-* Right-click on the Tomcat server in the Servers tab and select Start. Note, there may be errors in the Console, but these can be ignored.
-* Using a web browser, [Navigate](http://localhost:8080/SampleWebApp/) to the sample web application
+* Either right-click on the Tomcat server in the Servers tab and select Start, or click the green play button on the Servers tab. 
+* Note, there may be errors in the Console, but these can be ignored.
+* Using a web browser, [Navigate](http://localhost:8080) to the sample web application
 
  
 Build and Deploy the Quickstart
