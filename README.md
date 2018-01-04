@@ -1,67 +1,66 @@
 Sample Web Application Example
 ===============================
 Author: Eric Getchell   
-Level: Beginner  
-Technologies: Tomcat, Servlet, OpenShift, JBoss Developer Studio  
-Summary: The `helloworld` quickstart demonstrates importing of a simple web application into JBoss Developer Studio, deploying on a local Tomcat instance, and then leveraging Source 2 Image to seamlessly deploy the web application as a Docker image into OpenShift  
-Target Product: JBoss JWS, OpenShift, JBoss Developer Studio  
+Level: Intermediate  
+Technologies: Tomcat, Servlet, OpenShift, JBoss Developer Studio, Git, Containers  
+Summary: Demonstrate importing of a simple, traditional, web application into JBoss Developer Studio, deploying on a local Tomcat instance, and then leveraging Source 2 Image to seamlessly containerize the application and deploy the image into OpenShift.  
+Target Products: JBoss JWS, OpenShift, JBoss Developer Studio  
 Source: <https://github.com/egetchel/SampleWebApp/>  
 
 What is it?
 -----------
 
-Demonstrate portability between containerized and non-containerized runtimes with a sample Tomcat application.  Learn how to leverage Source 2 Image (S2I for containerizing existing applications)
+Step through a simple workflow that demonstrates portability between containerized and non-containerized runtimes with a sample Tomcat application.  Learn how to leverage Source 2 Image (S2I) for containerizing existing applications)
 
 
 System requirements
 -------------------
 
-The application this project produces is designed to be run with JBoss Developer Studio, Openshift (or Container Development Kit), and either the Tomcat that ships with JBoss Web Server or community Tomcat.
+The application in this project is designed to be run as a standalone Tomcat applcation, with JBoss Developer Studio, and as a container image within an Openshift instance.
 
-You will need Java 8.0 (Java SDK 1.8) or later and Maven 3.1.1 or later, JBoss Developer Studio 10 and Tomcat 7.
+You will need Java 8.0 (Java SDK 1.8) or later, Maven 3.1.1 or later, JBoss Developer Studio 10, Tomcat 7 or 8, and an instance of OpenShift.
 
 
 Install JBoss Developer Studio
 ---------------
+JBoss developer studio is an Eclipse-based development environment with numerous tools pre-installed. It can be downloaded from the Red Hat customer portal at [JBDS Download Link](https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=jbossdeveloperstudio&version=10.4.0).
 
-In the following instructions, replace `EAP7_HOME` with the actual path to your JBoss EAP installation. The installation path is described in detail here: [Use of EAP7_HOME and JBOSS_HOME Variables](https://github.com/jboss-developer/jboss-developer-shared-resources/blob/master/guides/USE_OF_EAP7_HOME.md#use-of-eap_home-and-jboss_home-variables).
 
 Import the Project
 -------------------------
-
+First, let's import a simple Tomcat web application.  The project is in [Github](https://github.com/egetchel/SampleWebApp) for convenient access. It is strongly recommended that you Fork this project so that local changes can be committed and redployments triggered.
+ 
 * From the Project Explorer menu, right-click and select "Import"
 * Select "Project from Git (with smart import)" and hit Next
-
 ![import](/images/import-git.png)
 * Select "Clone URI" and hit Next
 * Enter the repository URL to import and hit Next
 ![import](/images/import-git-repo-location.png)
+Note: Enter the URL of your Forked repository.
 * Make sure the SampleWebApp is selected and hit Finish
 ![import](/images/import-specify-resources.png)
 
 Install and Register Tomcat Server with JBoss Developer Studio
 -------------------------
-* Install JBoss Web Server 3 or Apache Tomcat.
-* Create a new Server instance.  In the Servers tab towards the bottom of the screen, click the link to create a new server. If one already exists, right-click and select "New" -> "Server"
+Next, we will install Tomcat and configure JBoss Developer Studio to be able to interact with the server.
+* Install [JBoss Web Server 3](https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?product=webserver&downloadType=distributions) or community [Apache Tomcat](https://tomcat.apache.org/download-70.cgi).  Make note of where the binaries are installed.
+* To allow JBDS to interact with the Tomcat server, we will create a new Server instance. In JBDS, find the Servers tab (towards the bottom of the screen), and click the link to create a new server. If a server instance already exists, simply right-click on an empty area and select "New" -> "Server"
 ![create](/images/create-new-server.png)
-* In the Apache section, select Tomcat v7.0 Server and select "Next"
+* This will bring up a list of runtimes that JBDS can manage. In the Apache section, select Tomcat v7.0 Server and select "Next"
 ![create](/images/create-tomcat-instance.png)
-* If an existing Tomcat runtime environment is not available, JBDS will ask for the installation location.  Select "Browse" and navigate to the root install folder and select "Next"
+* If no existing Tomcat runtime environments have been registred with JBDS, the next window will prompt for the Tomcat installation location.  Select "Browse" and navigate to the root install folder of Tomcat and select "Next"
 ![create](/images/create-tomcat-install-directory.png) 
-* In the Add and Remove window, add the SampleWebApp to the Tomcat server and select "Finish"
+* In the Add and Remove window, add the SampleWebApp project that was previously imported to the Tomcat server and select "Finish"
 ![create](/images/create-add-web-app.png)
 
 The server should now show in the Servers tab at the bottom of the screen.
 
 
-Start the JBoss EAP Server
+Start the Tomcat Server
 -------------------------
 
-1. Open a command prompt and navigate to the root of the JBoss EAP directory.
-2. The following shows the command line to start the server:
-
-        For Linux:   EAP7_HOME/bin/standalone.sh
-        For Windows: EAP7_HOME\bin\standalone.bat
+* Right-click on the Tomcat server in the Servers tab and select Start. Note, there may be errors in the Console, but these can be ignored.
+* Using a web browser, [Navigate](http://localhost:8080/SampleWebApp/) to the sample web application
 
  
 Build and Deploy the Quickstart
