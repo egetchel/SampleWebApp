@@ -74,10 +74,16 @@ Start the Tomcat Server
 * Note, there may be errors in the Console, but these can be ignored.
 * Using a web browser, [Navigate](http://localhost:8080) to the sample web application
 
+Great - so we've simply imported a simple web application into JBoss Developer Studio and deployed it to a local Tomcat instance.  Nothing special there.  Now, let's go through a few scenarios where we can automatically containerize the application and deploy it on a PaaS.
  
-Build and Deploy the Quickstart
+Deploy the Application to OpenShift
 -------------------------
-
+* Log into OpenShift.  If no Projects exist, then the Create Project button will be available
+![create](/images/openshift-home-page.png)
+* Click Create Project to launch the wizzard used to quickly create a Project and associate applications to it.  A Project in OpenShift is a way to group individual applications. On the Create Project screen, enter a project name and display name for the project.  
+![create](/images/openshift-create-project.png)
+After entering the values, click the "Create" button.
+* Now that the Project is created, we will add the Tomcat application.  The next screen allows you to add various technologies in a containerized fashion.  
 1. Make sure you have started the JBoss EAP server as described above.
 2. Open a command prompt and navigate to the root directory of this quickstart.
 3. Type this command to build and deploy the archive:
