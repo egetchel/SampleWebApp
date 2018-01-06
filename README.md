@@ -46,11 +46,11 @@ Next, we will install Tomcat and configure JBoss Developer Studio to be able to 
 * Install [JBoss Web Server 3](https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?product=webserver&downloadType=distributions) or community [Apache Tomcat](https://tomcat.apache.org/download-70.cgi).  Make note of where the binaries are installed.
 * To allow JBDS to interact with the Tomcat server, we will create a new Server instance. In JBDS, find the Servers tab (towards the bottom of the screen), and click the link to create a new server. If a server instance already exists, simply right-click on an empty area and select "New" -> "Server"
 ![create](/images/create-new-server.png)
-* This will bring up a list of runtimes that JBDS can manage. In the Apache section, select Tomcat v7.0 Server and select "Next"
+* This will bring up a list of runtimes that JBDS can manage. In the Apache section, select Tomcat v7.0 Server and select "Next"  
 ![create](/images/create-tomcat-instance.png)
 * If no existing Tomcat runtime environments have been registred with JBDS, the next window will prompt for the Tomcat installation location.  Select "Browse" and navigate to the root install folder of Tomcat and select "Next"
 ![create](/images/create-tomcat-install-directory.png) 
-* In the Add and Remove window, add the SampleWebApp project that was previously imported to the Tomcat server and select "Finish"
+* In the Add and Remove window, add the SampleWebApp project that was previously imported to the Tomcat server and select "Finish"  
 ![create](/images/create-add-web-app.png)
 
 The server should now show in the Servers tab at the bottom of the screen.
