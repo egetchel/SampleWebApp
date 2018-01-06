@@ -35,7 +35,7 @@ First, let's import a simple Tomcat web application.  The project is in [Github]
 ![import](/images/import-git.png)
 * Select "Clone URI" and hit Next
 * Enter the repository URL to import and hit Next
-![import](/images/import-git-repo-location.png)  
+<img src='/images/import-git-repo-location.png' width='75%'/>  
 Note: Enter the URL of your Forked repository.
 * Make sure the SampleWebApp is selected and hit Finish
 ![import](/images/import-specify-resources.png)
@@ -62,7 +62,7 @@ Note: This step is a workaround. The pom.xml is configured to create a web appli
 * On the bottom of the Tomcat configuration screen are two tabs labeled 'Overview' and 'Modules'. Select the Modules tab.
 * You will see the SampleWebApp application. Click the 'Edit' button
 ![modify](/images/tomcat-modify-context-root.png)
-* Remove the value '/ROOT' from the Path attribute
+* Remove the value '/ROOT' from the Path attribute  
 ![remove](/images/tomcat-remove-context-root.png)
 * Click OK
 * Save the configuration changes (File -> Save or hit the disk icon).
@@ -81,17 +81,17 @@ Deploy the Application to OpenShift
 * Log into OpenShift.  If no Projects exist, then the Create Project button will be available
 ![create](/images/openshift-home-page.png)
 * Click Create Project to launch the wizzard used to quickly create a Project and associate applications to it.  A Project in OpenShift is a way to group individual applications. On the Create Project screen, enter a project name and display name for the project.  
-![create](/images/openshift-create-project.png)
-After entering field, click the "Create" button.
+![create](/images/openshift-create-project.png)  
+After entering field values, click the "Create" button.
 * Now that the Project is created, we will add the Tomcat web application itself.  The next screen allows you to add various technologies in a containerized fashion.  
 ![create](/images/openshift-add-java-application.png)
 Click the Java button to bring up the next screen.
 * Next, we can specify the type of Java application we want to containerize and deploy.
-![create](/images/openshift-create-tomcat-app.png)
+![create](/images/openshift-create-tomcat-app.png)  
 Select the Red Hat JBoss Web Server (Tomcat) button.
 * The next screen shows all avaiable Tomcat images. Choose any of the Tomcat 7 images.
 ![create](/images/openshift-specify-tomcat-version.png)
-* Finally, we provide a name for the actual Tomcat resource and where the source code of our web application resides.  Use the Git URL of your repository used in previous steps.
+* Finally, we provide a name for the actual Tomcat resource and where the source code of our web application resides.  Use the Git URL of your repository used in previous steps.  
 ![create](/images/openshift-assicate-git-repo.png)
 * Clicking on the "Create" button will start the assembly process. The next screen provides some overview information on the container image
 ![create](/images/openshift-application-created.png)
