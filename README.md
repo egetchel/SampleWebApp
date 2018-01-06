@@ -34,7 +34,7 @@ First, let's import a simple Tomcat web application.  The project is in [Github]
 * Select "Project from Git (with smart import)" and hit Next
 ![import](/images/import-git.png)
 * Select "Clone URI" and hit Next
-* Enter the repository URL to import and hit Next
+* Enter the repository URL to import and hit Next  
 <img src='/images/import-git-repo-location.png' width='75%'/>  
 Note: Enter the URL of your Forked repository.
 * Make sure the SampleWebApp is selected and hit Finish
