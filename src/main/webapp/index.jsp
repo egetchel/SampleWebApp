@@ -9,7 +9,7 @@
 <body>
 <section class='container'>
           <hgroup>
-            <h1>Welcome to your Tomcat web application on OpenShift!</h1><img src="images/openshift_transparent.png" width="500px"/>
+            <h1>Welcome to your Tomcat web application on OpenShift.</h1><img src="images/openshift_transparent.png" width="500px"/>
           </hgroup>
 
         <div class="row">
